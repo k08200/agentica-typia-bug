@@ -9,9 +9,11 @@ jobs:
     - uses: actions/setup-node@v4
       with: 
         node-version: 20
-    - name: Install dependencies
-      run: npm install
+    - name: Install dependencies + ts-patch
+      run: |
+        npm install
+        npm install --save-dev ts-patch typescript
     - name: TypeScript build (Typia transform)
-      run: npx tsc  # 이제 동작함!
+      run: npx tsc
     - name: Run Typia repro
-      run: node repro.js  # tsx → node (빌드 후)
+      run: node dist/repro.js  # 빌드 결과물 실행

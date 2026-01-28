@@ -1,6 +1,9 @@
 name: Repro Typia Union Bug
+on: 
+  workflow_dispatch:
 jobs:
   test:
+    runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v4
     - uses: actions/setup-node@v4
@@ -8,7 +11,7 @@ jobs:
         node-version: 20
     - name: Install dependencies
       run: npm install
-    - name: Typia setup  # ← 추가!
+    - name: Typia setup           # ← 🔴 추가!
       run: npx typia setup
     - name: Run Typia repro
       run: npx tsx repro.ts

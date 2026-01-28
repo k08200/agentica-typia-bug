@@ -5,7 +5,8 @@
     "outDir": "./dist",
     "strict": true,
     "esModuleInterop": true,
-    "skipLibCheck": true
+    "skipLibCheck": true,
+    "plugins": [{ "transform": "typia/lib/transform" }]
   },
   "include": ["repro.ts"]
 }

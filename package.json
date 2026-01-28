@@ -1,9 +1,6 @@
 {
-  "name": "agentica-typia-bug",
-  "type": "module",
-  "scripts": { "repro": "tsx repro.ts" },
   "devDependencies": {
-    "typia": "latest",
-    "tsx": "latest"
+    "typescript": "^5.9.3",
+    "typia": "^6.1.10"
   }
 }

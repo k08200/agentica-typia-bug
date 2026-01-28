@@ -10,8 +10,10 @@ jobs:
       with: 
         node-version: 20
     - name: Install dependencies
-      run: npm install --legacy-peer-deps  # ✅ 이 한 줄로 해결!
+      run: npm install --legacy-peer-deps
+    - name: Typia setup (핵심!)
+      run: npx typia setup
     - name: Build with Typia transform
-      run: npx tsc --build
+      run: npx tsc
     - name: Run repro
       run: node dist/repro.js

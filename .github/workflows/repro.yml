@@ -9,5 +9,7 @@ jobs:
     - uses: actions/setup-node@v4
       with: 
         node-version: 20
-    - run: npm ci
-    - run: npx tsx repro.ts
+    - name: Install dependencies  # ← name 추가 (선택)
+      run: npm install             # ← npm ci → npm install (핵심 변경!)
+    - name: Run Typia repro       # ← name 추가 (선택)  
+      run: npx tsx repro.ts

@@ -11,7 +11,7 @@ jobs:
         node-version: 20
     - name: Install dependencies
       run: npm install
-    - name: TypeScript build (Typia transform)  # ✅ 추가!
-      run: npx tsc
+    - name: TypeScript build (Typia transform)
+      run: npx tsc  # 이제 동작함!
     - name: Run Typia repro
-      run: npx tsx repro.ts
+      run: node repro.js  # tsx → node (빌드 후)

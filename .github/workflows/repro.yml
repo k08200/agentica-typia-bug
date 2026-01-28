@@ -11,8 +11,10 @@ jobs:
         node-version: 20
     - name: Install dependencies
       run: npm install --legacy-peer-deps
-    - name: Typia setup (핵심!)
-      run: npx typia setup
+    - name: Install ts-patch manually
+      run: |
+        npm install --save-dev ts-patch typescript@^5.6.0
+        npx ts-patch install
     - name: Build with Typia transform
       run: npx tsc
     - name: Run repro

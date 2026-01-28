@@ -11,7 +11,5 @@ jobs:
         node-version: 20
     - name: Install dependencies
       run: npm install
-    - name: Typia setup           # ← 🔴 추가!
-      run: npx typia setup
     - name: Run Typia repro
       run: npx tsx repro.ts

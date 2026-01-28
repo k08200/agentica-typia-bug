@@ -1,15 +1,14 @@
 name: Repro Typia Union Bug
-on: 
-  workflow_dispatch:  # 수동 실행 버튼 생성!
 jobs:
   test:
-    runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v4
     - uses: actions/setup-node@v4
       with: 
         node-version: 20
-    - name: Install dependencies  # ← name 추가 (선택)
-      run: npm install             # ← npm ci → npm install (핵심 변경!)
-    - name: Run Typia repro       # ← name 추가 (선택)  
+    - name: Install dependencies
+      run: npm install
+    - name: Typia setup  # ← 추가!
+      run: npx typia setup
+    - name: Run Typia repro
       run: npx tsx repro.ts

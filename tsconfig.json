@@ -5,9 +5,7 @@
     "outDir": "./dist",
     "strict": true,
     "esModuleInterop": true,
-    "skipLibCheck": true,
-    "forceConsistentCasingInFileNames": true,
-    "plugins": [{ "transform": "typia/lib/transform" }]
+    "skipLibCheck": true
   },
   "include": ["repro.ts"]
 }

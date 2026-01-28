@@ -1,9 +1,9 @@
 import typia from "typia";
 
-interface UnionBug {
-  kind: "A" | "B";
-  value: kind extends "A" ? string : number;
-}
+// ✅ 올바른 Discriminated Union
+type UnionBug = 
+  | { kind: "A"; value: string }
+  | { kind: "B"; value: number };
 
 const badInput = { 
   kind: "A", 

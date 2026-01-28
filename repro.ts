@@ -1,11 +1,14 @@
 import typia from "typia";
 
-interface BadUnion {
-  oneOf: { type: "string" } | { type: "null" };
+interface UnionBug {
+  kind: "A" | "B";
+  value: kind extends "A" ? string : number;
 }
 
-const input = { oneOf: { type: "null" } };
-const result = typia.validate<BadUnion>(input);
+const badInput = { 
+  kind: "A", 
+  value: 123  // ❌ kind="A"인데 number! string이어야 함
+};
 
-console.log("BUG REPRO:", result);
-// 예상 출력: { success: true, data: { oneOf: undefined } }
+const result = typia.validate<UnionBug>(badInput);
+console.log("Validation result:", result.success);  // 기대: false

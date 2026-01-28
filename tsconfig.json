@@ -1,17 +1,13 @@
 {
   "compilerOptions": {
-    "strict": true,
-    "strictNullChecks": true,
-    "skipLibCheck": true,
     "target": "ES2022",
-    "module": "ESNext",
-    "moduleResolution": "bundler",
+    "module": "CommonJS",
     "outDir": "./dist",
-    "plugins": [
-      {
-        "transform": "typia/lib/transform"
-      }
-    ]
+    "strict": true,
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true,
+    "plugins": [{ "transform": "typia/lib/transform" }]
   },
   "include": ["repro.ts"]
 }

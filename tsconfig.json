@@ -1,0 +1,12 @@
+{
+  "compilerOptions": {
+    "strict": true,
+    "strictNullChecks": true,
+    "skipLibCheck": true,
+    "target": "ES2022",
+    "module": "ESNext",
+    "moduleResolution": "bundler",
+    "plugins": [{ "transform": "typia/lib/transform" }]
+  },
+  "include": ["repro.ts"]
+}
